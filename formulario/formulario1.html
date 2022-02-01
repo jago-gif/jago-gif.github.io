@@ -23,17 +23,29 @@
         </div>
         <section class="contenedor body">
             <section class="contenedor_formulario">
-                <h2>aqui va el Formulario</h2>
+                <h2>Formulario</h2>
                 
 
                 <form action="" class="formulario">
-                    <div><label for="Nombre completo">Nombre completo:</label><br>
-                        <input type="text" id="fnombre" name="fnombre" placeholder="Julio Tribiño" ><br>
+                    <div class="formulario"><label for="Nombre completo">Nombre completo:</label>
+                        <input type="text" id="fnombre" required="required" name="fnombre" placeholder="Julio Tribiño" ><br><br>
                     </div>
-                    <div><label for="email">Correo Electronico:</label><br>
-                        <input type="text" id="email" name="email" placeholder="jtribiño@correo.cl" ><br>
+                    <div class="formulario">
+                        <label for="rut">RUT (*)</label>
+                        <input type="number" id="rut" name="rut" required="required" min="4000000" minlength="7" maxlength="8" placeholder="12345678">
+                        - 
+                        <input type="text" id="dv" name="dv" placeholder="k" required="required" minlength="1" maxlength="1" pattern="[0-9kK]{1}"><br>
+                        <small>Complete con su RUT sin puntos ni guión</small><br><br>
                     </div>
-                    
+                    <div class="formulario"><label for="email">Correo Electronico:</label>
+                        <input type="text" id="email" required="required" name="email" placeholder="jtribiño@correo.cl" ><br><br>
+                    </div>
+                    <div>
+                        <label for="solicitud">Solicitud:</label>&nbsp
+                        <textarea name="message" rows="10" cols="30">
+                            Escriba la su solicitud.
+                            </textarea><br><br>
+                    </div>
                         <div>
                         <button id="boton" type="submit" class="btnenviar">Enviar                    
                         </button>   
