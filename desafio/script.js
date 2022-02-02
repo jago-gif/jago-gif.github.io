@@ -1,6 +1,6 @@
 import { createClient } from '@supabase/supabase-js'
 
-function registrar(event){    
+function registrarPaciente(event){    
     // evito que el formulario haga un submit normal
     // para manejarlo dentro de la función
     event.preventDefault(); 
@@ -19,15 +19,19 @@ function registrar(event){
 
     
     // envío los datos vía API REST
-    const baseURL   = "https://atkltguookjwtbtvavdu.supabase.co";
-    const apiCall   = '/rest/v1/alumnos'
-    const apiKey    = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTY0MzU5MDgwOSwiZXhwIjoxOTU5MTY2ODA5fQ.Cp0etHVDvjVFLPl2RWteZt0j-Mynpm52S6iryYTpbPI"
+    const baseURL   = "https://hwwyuypdcxdigyfznqcw.supabase.co";
+    const apiCall   = '/rest/v1/f-registro'
+    const apiKey    = process.env.SUPABASE_KEY
     const url       = baseURL + apiCall
-    const alumno    = {
-        rut,
-        dv,
-        nombre,
-        github
+    const paciente    = {
+        pname,
+        tutor,
+        fnac,
+        especie,
+        raza,
+        sexo,
+        peso,
+        diagnostico,
     }
     
     fetch(url, {
@@ -37,7 +41,7 @@ function registrar(event){
             "apikey": apiKey,
             "authorization": "Bearer "+apiKey
         },
-        body: JSON.stringify(alumno)
+        body: JSON.stringify(f-registro)
     })
         .then( response => {
             if( response.ok ) {
@@ -55,4 +59,4 @@ function registrar(event){
 }
 
 document.getElementById("form-registro")
-    .addEventListener("submit", registrarAlumno);
+    .addEventListener("submit", registrarPaciente);
