@@ -64,5 +64,5 @@ function registrarPaciente(event){
     return false;
 }
 
-document.getElementById("registro")
+document.getElementById("form-registro")
     .addEventListener("submit", registrarPaciente);
