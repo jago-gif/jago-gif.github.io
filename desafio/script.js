@@ -45,7 +45,7 @@ function registrarPaciente(event){
             "apikey": apiKey,
             "authorization": "Bearer "+apiKey
         },
-        body: JSON.stringify(f-registro)
+        body: JSON.stringify(paciente)
     })
         .then( response => {
             if( response.ok ) {
