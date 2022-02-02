@@ -12,20 +12,22 @@ function registrarPaciente(event){
     const boton = document.getElementById("boton").disabled = true;
 
     // recupero los valores ingresador x el usuario
-    document.getElementById("pname").value
-    document.getElementById("tutor").value
-    document.getElementById("fnac").value
-    document.getElementById("especie").value
-    document.getElementById("raza").value
-    document.getElementById("sexo").value
-    document.getElementById("peso").value
-    document.getElementById("diagnostico").value
-
+    const form           = event.currentTarget;
+    const pname          = form[0].value 
+    const tutor          = form[1].value 
+    const fnac           = form[2].value 
+    const especie        = form[3].value 
+    const raza           = form[4].value 
+    const sexo           = form[5].value 
+    const peso           = form[6].value 
+    const diagnostico    = form[7].value 
     
-    // envío los datos vía API REST
-    const baseURL   = "https://hwwyuypdcxdigyfznqcw.supabase.co";
-    const apiCall   = '/rest/v1/f-registro'
-    const apiKey    = process.env.SUPABASE_KEY
+    // Conexion API REST desde libreria//
+    import { createClient } from '@supabase/supabase-js'
+
+    const supabaseUrl = 'https://hwwyuypdcxdigyfznqcw.supabase.co'
+    const supabaseKey = process.env.SUPABASE_KEY
+    const supabase = createClient(supabaseUrl, supabaseKey)
     const url       = baseURL + apiCall
     const paciente    = {
         pname,
