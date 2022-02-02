@@ -76,8 +76,13 @@
                 </div><br>
                 <div class="form-line">
                     <label for="raza">Raza: (*)</label>
-                    <input type="text" id="raza" name="raza" required="required" minlength="3" maxlength="60"
-                        placeholder="Akita Americano">
+                    <select name="select">
+                        <option value="Perro">Perro</option>
+                        <option value="Gato" selected>Gato</option>
+                        <option value="Aves" selected>Aves</option>
+                        <option value="Peces" selected>Peces</option>
+                        <option value="Tortuga" selected>Tortuga</option>
+                    </select>
                     <small>Escriba La raza del paciente.</small>
                 </div><br>
                 <div class="form-line">
@@ -107,6 +112,7 @@
             </form>
 
         </div>
+        
     </div>
 </body>
 </html>
