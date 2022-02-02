@@ -65,7 +65,7 @@
                 
                 <div class="form-line">
                     <label for="Fnacimiento">Edad del paciente (*)</label>
-                    <input type="date" id="fnac" name="fnac" required="required" minlength="3" maxlength="60">
+                    <input type="date" id="fnac" name="fnac" required="required" minlength="3" maxlength="12">
                     <small>Escriba la edad.</small>
                 </div><br>
                 <div class="form-line">
@@ -76,7 +76,7 @@
                 </div><br>
                 <div class="form-line">
                     <label for="raza">Raza: (*)</label>
-                    <select name="select">
+                    <select name="raza" id="raza">
                         <option value="Perro">Perro</option>
                         <option value="Gato" selected>Gato</option>
                         <option value="Aves" selected>Aves</option>
@@ -86,21 +86,21 @@
                     <small>Escriba La raza del paciente.</small>
                 </div><br>
                 <div class="form-line">
-                    <label for="raza">Sexo: (*)</label>
-                    <select name="select">
+                    <label for="sexo">Sexo: (*)</label>
+                    <select name="sexo" id="sexo">
                         <option value="Macho">Macho</option>
                         <option value="Hembra" selected>Hembra</option>
                     </select>
                 </div><br>
                 <div class="form-line">
                     <label for="peso">Peso: (*)</label>
-                    <input type="peso" id="peso" name="peso" required="required" minlength="3" maxlength="60"
+                    <input type="number" id="peso" name="peso" required="required" minlength="3" maxlength="60"
                         placeholder="2.5kg">
                     <small>Escriba La del paciente.</small>
                 </div>
                 <div class="form-line">
-                    <label for="peso">Diagnostico: (*)</label>
-                    <textarea name="diagnostico" rows="5" required="required" cols="30">
+                    <label for="diagnostico">Diagnostico: (*)</label>
+                    <textarea name="diagnostico"  id="diagnostico" rows="5" required="required" cols="30">
                         
                         </textarea>
                     <small>Escriba el diagnostico del paciente.</small>
@@ -110,7 +110,8 @@
                 </div>
             </div>    
             </form>
-
+            <script src="script.js"></script>
+   
         </div>
         
     </div>
