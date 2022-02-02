@@ -1,5 +1,9 @@
 import { createClient } from '@supabase/supabase-js'
 
+// formatear tipo de fecha//
+var dateControl = document.querySelector('input[type="date"]');
+dateControl.value = '2017-06-01';
+
 function registrarPaciente(event){    
     // evito que el formulario haga un submit normal
     // para manejarlo dentro de la función
