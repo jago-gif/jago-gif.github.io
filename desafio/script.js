@@ -28,7 +28,8 @@ function registrarPaciente(event){
     const supabaseUrl = 'https://hwwyuypdcxdigyfznqcw.supabase.co'
     const supabaseKey = process.env.SUPABASE_KEY
     const supabase = createClient(supabaseUrl, supabaseKey)
-    const url       = baseURL + apiCall
+    const apiCall   = '/rest/v1/sem1veterinaria'
+    const url       = supabaseUrl + apiCall
     const paciente    = {
         pname,
         tutor,
