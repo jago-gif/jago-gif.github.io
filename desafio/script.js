@@ -25,9 +25,9 @@ function registrarPaciente(event){
         //envio de datos por API REST
         const baseURL   = "https://hwwyuypdcxdigyfznqcw.supabase.co";
         const apiCall   = '/rest/v1/f-registro'
-        const apiKey    = process.env.SUPABASE_KEY
+        const apiKey    = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic2VydmljZV9yb2xlIiwiaWF0IjoxNjQzODM4OTEyLCJleHAiOjE5NTk0MTQ5MTJ9.tNykPvbzGeUsS7UoP2mNJNBjKUG6R76HPcNtLT1TjBc'
         const url       = baseURL + apiCall
-        const paciente    = {
+        const paciente  = {
             pname,
             tutor,
             fnac,      
