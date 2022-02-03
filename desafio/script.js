@@ -1,5 +1,3 @@
-import { createClient } from '@supabase/supabase-js'
-import { format } from 'path/posix';
 
 // formatear tipo de fecha//
 var dateControl = document.querySelector('input[type="date"]');
@@ -12,35 +10,44 @@ function registrarPaciente(event){
 
     const boton = document.getElementById("boton").disabled = true;
 
-    // constantes del formulario
-    const form = document.getElementById("form")
-    const pname = document.getElementById("pname")
-    const tutor = document.getElementById("tutor")
-    const fnac = document.getElementById("fnac")
-    const especie = document.getElementById("especie")
-    const raza = document.getElementById("raza")
-    const sexo = document.getElementById("sexo")
-    const peso = document.getElementById("peso")
-    const diagnostico = document.getElementById("diagnostico")
+    // recuperar datos del formulario
     
-    //evento de envio
-    form.addEventListener('submint', (e) => {
-        e.preventDefault();
-        checkInputs();
-    });
+    const pname = document.getElementById("pname").value
+    const tutor = document.getElementById("tutor").value
+    const fnac = document.getElementById("fnac").value
+    const especie = document.getElementById("especie").value
+    const raza = document.getElementById("raza").value
+    const sexo = document.getElementById("sexo").value
+    const peso = document.getElementById("peso").value
+    const diagnostico = document.getElementById("diagnostico").value
+    
 
-        function checkInputs() {
-         // recupero los valores ingresador x el usuario
-        const pnameValue         = pname.value 
-        const tutorValue         = tutor.value
-        const fnacValue          = fnac.value
-        const especieValue       = especie.value
-        const razaValue          = raza.value
-        const sexoValue          = sexo.value
-        const pesoValue          = peso.value
-        const diagnosticoValue   = diagnostico.value
-        
-        }
+        //envio de datos por API REST
+        const baseURL   = "https://hwwyuypdcxdigyfznqcw.supabase.co";
+        const apiCall   = '/rest/v1/f-registro'
+        const apiKey    = "s:Eo\e*9Eh87{"
+        const url       = baseURL + apiCall
+        const paciente    = {
+            pname,
+            tutor,
+            fnac,      
+            especie,         
+            raza,      
+            sexo,      
+            peso,      
+            diagnostico,
+        } 
+    
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+                "apikey": apiKey,
+                "authorization": "Bearer "+apiKey
+            },
+            body: JSON.stringify(paciente)
+        })
+}
 
 document.getElementById("form")
     .addEventListener("submit", registrarPaciente);
