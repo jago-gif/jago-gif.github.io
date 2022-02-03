@@ -1,4 +1,5 @@
 import { createClient } from '@supabase/supabase-js'
+import { format } from 'path/posix';
 
 // formatear tipo de fecha//
 var dateControl = document.querySelector('input[type="date"]');
@@ -11,59 +12,35 @@ function registrarPaciente(event){
 
     const boton = document.getElementById("boton").disabled = true;
 
-    // recupero los valores ingresador x el usuario
-    const form           = event.currentTarget;
-    const pname          = form[0].value 
-    const tutor          = form[1].value 
-    const fnac           = form[2].value 
-    const especie        = form[3].value 
-    const raza           = form[4].value 
-    const sexo           = form[5].value 
-    const peso           = form[6].value 
-    const diagnostico    = form[7].value 
+    // constantes del formulario
+    const form = document.getElementById("form")
+    const pname = document.getElementById("pname")
+    const tutor = document.getElementById("tutor")
+    const fnac = document.getElementById("fnac")
+    const especie = document.getElementById("especie")
+    const raza = document.getElementById("raza")
+    const sexo = document.getElementById("sexo")
+    const peso = document.getElementById("peso")
+    const diagnostico = document.getElementById("diagnostico")
     
-    // Conexion API REST desde libreria//
-    import { createClient } from '@supabase/supabase-js'
+    //evento de envio
+    form.addEventListener('submint', (e) => {
+        e.preventDefault();
+        checkInputs();
+    });
 
-    const supabaseUrl = 'https://hwwyuypdcxdigyfznqcw.supabase.co'
-    const supabaseKey = process.env.SUPABASE_KEY
-    const supabase = createClient(supabaseUrl, supabaseKey)
-    const apiCall   = '/rest/v1/sem1veterinaria'
-    const url       = supabaseUrl + apiCall
-    const paciente    = {
-        pname,
-        tutor,
-        fnac,
-        especie,
-        raza,
-        sexo,
-        peso,
-        diagnostico,
-    }
-    
-    fetch(url, {
-        method: 'POST',
-        headers: {
-            "Content-Type": "application/json",
-            "apikey": apiKey,
-            "authorization": "Bearer "+apiKey
-        },
-        body: JSON.stringify(paciente)
-    })
-        .then( response => {
-            if( response.ok ) {
-                mostrarMensaje("ok", "Se han guardado correctamente sus datos.");
-                return response.json();
-            } else {
-                mostrarMensaje("error", "Hubo un error al guardar el registro.");
-            }
-        })
-        .then( data     => console.log(data) ) 
-        .catch( err     => mostrarMensaje("error", "Se generó una excepción al ejecutar, contacte al administrador si el problema persiste.") )
-    ;
+        function checkInputs() {
+         // recupero los valores ingresador x el usuario
+        const pnameValue         = pname.value 
+        const tutorValue         = tutor.value
+        const fnacValue          = fnac.value
+        const especieValue       = especie.value
+        const razaValue          = raza.value
+        const sexoValue          = sexo.value
+        const pesoValue          = peso.value
+        const diagnosticoValue   = diagnostico.value
+        
+        }
 
-    return false;
-}
-
-document.getElementById("form-registro")
+document.getElementById("form")
     .addEventListener("submit", registrarPaciente);
