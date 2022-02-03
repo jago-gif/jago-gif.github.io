@@ -1,5 +1,5 @@
 //variable contenedor
-const contenedor = document.querySelector('tbody')
+const contenedor = document.querySelector("tbody")
 let resultados = ''
 
 
@@ -24,12 +24,14 @@ const mostrar = (pacientes) => {
                         </tr>
                     ` 
                         
-    })
+    });
     contenedor.innerHTML = resultados
 }
 fetch(url, {  
               
     headers: {
+        method: 'GET',
+
         "Content-Type": "application/json",
         "apikey": apiKey,
         "authorization": "Bearer "+apiKey
@@ -40,4 +42,6 @@ fetch(url, {
     .then( data => mostrar(data) )
     .catch( error => console.log(resultados) )
     .catch(console.log(resultados))
+
+    
 
