@@ -40,10 +40,9 @@ font-size: 4vw;
     align-items: center;
     height: 100%;
 }
-.contenido img{
-    padding: 20px;
-    display: block;
-    position: relative;
+.contenido  img{
+    padding: 50px;
+    border-radius: 50%;
     max-width: 100%;
     width: 50%;
 }
@@ -97,6 +96,10 @@ form #boton{
     right: auto;
         
     
+}
+.formulario img {
+    max-width: 100%;
+    width: 50%;
 }
 br{
     size: 1em;
