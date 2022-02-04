@@ -9,7 +9,7 @@ const contenedor = document.querySelector("tbody")
 let resultados = ''
 
 const mostrar = (registros) => {
-    registros.array.forEach(registro => {
+    registros.array?.forEach(registro => {
         resultados +=   ` 
                          <tr>
                              <td>${registro.id}</td>
@@ -20,24 +20,29 @@ const mostrar = (registros) => {
                              <td>${registro.sexo}</td>
                              <td>${registro.peso}</td>
                              <td>${registro.diagnostico}</td>
-                             
                          </tr>
                         `                    
     })
     contenedor.innerHTML=resultados
 }
 
+document
+  .getElementById("btnload")
+  .addEventListener("click", () => {
     fetch(url, {              
-    headers: {
-        method: 'GET',
-        "Content-Type": "application/json",
-        "apikey": apiKey,
-        "authorization": "Bearer "+apiKey
-        },
+        headers: {
+            method: 'GET',
+            "Content-Type": "application/json",
+            "apikey": apiKey,
+            "authorization": "Bearer "+apiKey
+            },
+    })
+    .then(response => {console.dir(response); return response.json();})
+    .then( data => mostrar(data) )
+    .catch(error => console.log(error) )
 })
-.then(response => {console.dir(response); return response.json();})
-.then( data => mostrar(data) )
-.catch(error => console.log(error) )
+
+    
 
 
  
