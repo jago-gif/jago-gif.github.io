@@ -10,24 +10,26 @@ const contenedor = document.querySelector("tbody");
 let resultados = "";
 
 const mostrar = (registros) => {
-  registros.array?.forEach((registro) => {
+  registros.forEach((registro) => {
     resultados += ` 
                          <tr>
                              <td>${registro.id}</td>
                              <td>${registro.pname}</td>
+                             <td>${registro.tutor}</td>
                              <td>${registro.fnac}</td>
                              <td>${registro.especie}</td>
                              <td>${registro.raza}</td>
                              <td>${registro.sexo}</td>
                              <td>${registro.peso}</td>
                              <td>${registro.diagnostico}</td>
+                             <td><button id="btnload" >borrar</button><button id="btnload" >editar</button></td>
                          </tr>
                         `;
   });
   contenedor.innerHTML = resultados;
 };
 
-document.getElementById("btnload").addEventListener("click", () => {
+
   fetch(url, {
     headers: {
       method: "GET",
@@ -41,11 +43,14 @@ document.getElementById("btnload").addEventListener("click", () => {
       return response.json();
     })
     .then((data) => {
-      console.dir(mostrar);
+      console.dir(data);
+      mostrar(data);
       return data;
     })
     .catch((error) => {
       console.dir(error);
       return error;
     });
-});
+   
+
+
