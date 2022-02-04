@@ -22,8 +22,7 @@ const mostrar = (registros) => {
                              <td>${registro.diagnostico}</td>
                              
                          </tr>
-                        ` 
-                        
+                        `                    
     })
     contenedor.innerHTML=resultados
 }
@@ -36,7 +35,7 @@ const mostrar = (registros) => {
         "authorization": "Bearer "+apiKey
         },
 })
-.then(Response => Response.json() )
+.then(response => {console.dir(response); return response.json();})
 .then( data => mostrar(data) )
 .catch(error => console.log(error) )
 
