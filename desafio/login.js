@@ -1,61 +1,83 @@
-const { createClient } = supabase;
-const baseURL = "https://hwwyuypdcxdigyfznqcw.supabase.co";
-const apiCall = "/rest/v1/usuarios";
-const apiKey =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic2VydmljZV9yb2xlIiwiaWF0IjoxNjQzODM4OTEyLCJleHAiOjE5NTk0MTQ5MTJ9.tNykPvbzGeUsS7UoP2mNJNBjKUG6R76HPcNtLT1TjBc";
-const url = baseURL + apiCall;
+var SUPABASE_URL = 'https://hwwyuypdcxdigyfznqcw.supabase.co'
+var SUPABASE_KEY =
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic2VydmljZV9yb2xlIiwiaWF0IjoxNjQzODM4OTEyLCJleHAiOjE5NTk0MTQ5MTJ9.tNykPvbzGeUsS7UoP2mNJNBjKUG6R76HPcNtLT1TjBc'
 
-//variable contenedor
-var usuarios = "";
-var clave = "";
-const mostrarusuarios = (registros) => {
-  registros.forEach((registro) => {
-    usuarios += ` 
-                            ${registro.usuario}
-                        `;
-    clave += ` 
-                            ${registro.password}
-                        `;
-  });
-usuarios.innerHTML= usuarios
-clave.innerHTML= clave
-};
+var supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY)
+window.userToken = null
 
+document.addEventListener('DOMContentLoaded', function (event) {
+  var signUpForm = document.querySelector('#sign-up')
+  signUpForm.onsubmit = signUpSubmitted.bind(signUpForm)
 
-  fetch(url, {
-    headers: {
-      method: "GET",
-      "Content-Type": "application/json",
-      apikey: apiKey,
-      authorization: "Bearer " + apiKey,
-    },
-  })
+  var logInForm = document.querySelector('#log-in')
+  logInForm.onsubmit = logInSubmitted.bind(logInForm)
+
+  var userDetailsButton = document.querySelector('#user-button')
+  userDetailsButton.onclick = fetchUserDetails.bind(userDetailsButton)
+
+  var logoutButton = document.querySelector('#logout-button')
+  logoutButton.onclick = logoutSubmitted.bind(logoutButton)
+})
+
+const signUpSubmitted = (event) => {
+  event.preventDefault()
+  const email = event.target[0].value
+  const password = event.target[1].value
+
+  supabase.auth
+    .signUp({ email, password })
     .then((response) => {
-      console.dir(response);
-      return response.json();
+      response.error ? alert(response.error.message) : setToken(response)
     })
-    .then((data) => {
-      console.dir(data);
-      mostrarusuarios(data);
-      return data;
+    .catch((err) => {
+      alert(err)
     })
-    .catch((error) => {
-      console.dir(error);
-      return error;
-    });
+}
 
-function login(){
-    let user,pass;
-    user = document.getElementById("usuario").value
-    pass = document.getElementById("password").value
-    if(user== "admin" && pass == "admin" ){
-        window.location= "fichas.html";
-    }
-    else{
-        //alerta de error
-       alert("Usuario = admin \n contraseña = admin  \n sorry no pude sacarlo desde la base de datos")
-       //borrar informacion de los input
-       document.getElementById("usuario").value = "";
-       document.getElementById("password").value = "";
-    }
+const logInSubmitted = (event) => {
+  event.preventDefault()
+  const email = event.target[0].value
+  const password = event.target[1].value
+
+  supabase.auth
+    .signIn({ email, password })
+    .then((response) => {
+      response.error ? alert(response.error.message) : setToken(response)
+    })
+    .catch((err) => {
+      alert(err.response.text)
+    })
+}
+
+const fetchUserDetails = () => {
+  alert(JSON.stringify(supabase.auth.user()))
+}
+
+const logoutSubmitted = (event) => {
+  event.preventDefault()
+
+  supabase.auth
+    .signOut()
+    .then((_response) => {
+      document.querySelector('#access-token').value = ''
+      document.querySelector('#refresh-token').value = ''
+      alert('Sesion Cerrada con exito')
+
+    })
+    .catch((err) => {
+      alert(err.response.text)
+    })
+}
+
+function setToken(response) {
+  if (response.user.confirmation_sent_at && !response?.session?.access_token) {
+    alert('Correo de Confirmación Mandado')
+  } else {
+    document.querySelector('#access-token').value = response.session.access_token
+    document.querySelector('#refresh-token').value = response.session.refresh_token
+    alert('Conectado como ' + response.user.email)
+    window.location= "fichas.html";
+
+
+  }
 }
