@@ -136,7 +136,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="mformLabel">Formulario de Registro</h5>
+          <h5 class="modal-title" id="mformLabel">Agenda tu hora</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -155,9 +155,13 @@
                         <small>Escriba los dos nombres y apellidos del tutor.</small>
                     </div>
                     <div class="form-line">
-                        <label for="fnac"> Edad del paciente (*) </label>
-                        <input  class="form-control" type="date" id="fnac" value="2017-06-01" name="fnac" required="required">
-                        <small>Escriba la edad.</small>
+                        <label for="especie">Area: (*)</label>
+                        <select class="form-control" name="atencion" id="atencion">
+                            <option value="Consulta veterinaria">Consulta veterinaria</option>
+                            <option value="Peluquería">Peluquería</option>
+                            <option value="Hospitalización">Hospitalización</option>
+                        </select>
+                        <small>Que tipo de atencion requiere.</small>
                     </div>
                     <div class="form-line">
                         <label for="especie">Especie: (*)</label>
@@ -176,25 +180,19 @@
                             placeholder="golden">
                         <small>Escriba La especie del paciente.</small>
                     </div>
-                    <div class="form-line">
-                        <label for="sexo">Sexo: (*)</label>
-                        <select class="form-control" name="sexo" id="sexo">
-                            <option value="Macho">Macho</option>
-                            <option value="Hembra" selected>Hembra</option>
-                        </select>
-                    </div>
-                    <div class="form-line">
-                        <label for="peso">Peso: (*)</label>
-                        <input class="form-control" type="text" id="peso" name="peso" required="required" minlength="1" maxlength="60"
-                            placeholder="2.5kg">
-                        <small>Escriba La del paciente.</small>
-                    </div>
-                    <div class="form-line">
-                        <label for="diagnostico">Diagnostico: (*)</label>
-                        <textarea class="form-control" name="diagnostico" id="diagnostico" rows="1" required="required" >
-                        </textarea>
-                        <small>Escriba el diagnostico del paciente.</small>
-                    </div>
+                        <div class="form-line">
+                            <label for="fecha"> Fecha de atencion (*) </label>
+                            <input  class="form-control" type="date" id="fecha" value="2022-02-08" name="fecha" required="required">
+                            <small>Escriba la edad.</small>
+                        </div>
+                        <div class="form-line">
+                            <label id="hora" name="hora" for="hora"> Hora de atencion (*) </label>
+                            <input class="form-control"  type="time">
+                            <small>Escriba la la hora de la atención.</small>
+                        </div>
+                        
+                       
+                    
                     <div class="form-line buttons">
                         <button class="btn btn-primary w-75 mx-auto" id="boton" type="submit" data-bs-dismiss="modal">Enviar</button>
                     </div>
@@ -202,7 +200,7 @@
             </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
         </div>
       </div>
     </div>
