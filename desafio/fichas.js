@@ -7,6 +7,8 @@ const url = baseURL + apiCall;
 
 
 
+
+
 //variable contenedor
 const contenedor = document.querySelector("tbody");
 let resultados = "";
@@ -24,39 +26,36 @@ const mostrar = (registros) => {
                              <td>${registro.sexo}</td>
                              <td>${registro.peso}</td>
                              <td>${registro.diagnostico}</td>
-                             <td><button class="btn btn-danger" id="btnBorrar" ><i class="far fa-trash-alt"></i>
-                             </button>
-                             <button class="btn btn-primary" id="btnEditar" ><i class="fas fa-user-edit"></i>
-                             </button></td>
+                             <td> <a class="btnEditar btn btn-primary"> editar</a> <a class="btnborrar btn btn-danger"> borrar</a> </td>
                          </tr>
                         `;
   });
   contenedor.innerHTML = resultados;
 };
 
-
-  fetch(url, {
-    headers: {
-      method: "GET",
-      "Content-Type": "application/json",
-      apikey: apiKey,
-      authorization: "Bearer " + apiKey,
-    },
+fetch(url, {
+  headers: {
+    method: "GET",
+    "Content-Type": "application/json",
+    apikey: apiKey,
+    authorization: "Bearer " + apiKey,
+  },
+})
+  .then((response) => {
+    console.dir(response);
+    return response.json();
   })
-    .then((response) => {
-      console.dir(response);
-      return response.json();
-    })
-    .then((data) => {
-      console.dir(data);
-      mostrar(data);
-      return data;
-    })
-    .catch((error) => {
-      console.dir(error);
-      return error;
-    });
-   
+  .then((data) => {
+    console.dir(data);
+    mostrar(data);
+    return data;
+  })
+  .catch((error) => {
+    console.dir(error);
+    return error;
+  });
+ 
+  
 //script de guardar datos dentro del model
 
 // formatear tipo de fecha//
@@ -110,7 +109,39 @@ function registrarPaciente(event){
             body: JSON.stringify(paciente)
         })
 }
+const on = (element, event, selector, handler ) =>{
+  element.addEventListener(event, e => {
+    if(e.target.closest(selector)){
+      handler(e)
+    }
+  })
+}
+
+on(document, 'click', ".btnborrar", e =>{
+  const fila = e.target.parentNode.parentNode
+  const id= fila.firstElementChild.innerHTML
+  console.log(id)
+  alertify.confirm("This is a confirm dialog.",
+  function(){
+    alertify.success('Ok');
+    fetch(url+id,{
+      method: 'DELETE',
+      headers: {
+        "Content-Type": "application/json",
+        "apikey": apiKey,
+        "authorization": "Bearer "+apiKey
+    },
+    })
+    .then( res => res.json())
+    .then( () => location.reaload())
+  },
+  function(){
+    alertify.error('Cancel');
+  });
+
+})
 
 document.getElementById("form")
     .addEventListener("submit", registrarPaciente);
-
+    
+    
