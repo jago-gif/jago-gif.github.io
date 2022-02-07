@@ -95,6 +95,11 @@
               <p class="p-3 fs-4">Contamos con servicios de <span class="text-primary">gran calidad</span>, a continuación te presentamos
                 algunas de nuestras áreas más solicitadas.</p> 
           </h1>
+             <!----------------------------------boton modal--------------------------------------->
+         
+          <button id="btnopen" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mform">
+            Reserva tu hora
+          </button>
       </section>
             <!----------------------------------porque servicios--------------------------------------->
 <section class="container-fluid">
@@ -122,70 +127,88 @@
         </div>
     </div>
 </section>
-<section container-fluid>
-    <div class="formulario" id="form-paciente">
-        <form class="row w-50 mx-auto my-5 form-line" id="form">
-            <div class="mb-3 contform">
-                <h2>Formulario de Registro</h2>
-                <div class="form-line">
-                    <label for="pname">Nombre del paciente (*)</label>
-                    <input class="form-control" type="text" id="pname" name="pname" required="required" minlength="3" maxlength="40"
-                        placeholder="Firulais">
-                    <small>Escriba el nombre del paciente</small>
-                </div><br>
-                <div class="form-line">
-                    <label for="tutor"> Nombre Completo (*) </label>
-                    <input class="form-control" type="text" id="tutor" name="tutor" required="required" minlength="3" maxlength="60"
-                        placeholder="Julio Alberto Tribiño Sotomayor">
-                    <small>Escriba los dos nombres y apellidos del tutor.</small>
-                </div><br>
+<!----------------------------------formularios----------------------------------->
+<!-- Button trigger modal -->
 
-                <div class="form-line">
-                    <label for="fnac"> Edad del paciente (*) </label>
-                    <input  class="form-control" type="date" id="fnac" value="2017-06-01" name="fnac" required="required">
-                    <small>Escriba la edad.</small>
-                </div><br>
-                <div class="form-line">
-                    <label for="especie">Especie: (*)</label>
-                    <select class="form-control" name="especie" id="especie">
-                        <option value="Perro">Perro</option>
-                        <option value="Gato">Gato</option>
-                        <option value="Aves">Aves</option>
-                        <option value="Peces">Peces</option>
-                        <option value="Tortuga">Tortuga</option>
-                    </select>
-                    <small>Escriba La especie del paciente.</small>
-                </div><br>
-                <div class="form-line">
-                    <label for="raza">raza: (*)</label>
-                    <input class="form-control"type="text" id="raza" name="raza" required="required" minlength="3" maxlength="60"
-                        placeholder="golden">
-                    <small>Escriba La especie del paciente.</small>
-                </div><br>
-                <div class="form-line">
-                    <label for="sexo">Sexo: (*)</label>
-                    <select class="form-control" name="sexo" id="sexo">
-                        <option value="Macho">Macho</option>
-                        <option value="Hembra" selected>Hembra</option>
-                    </select>
-                </div><br>
-                <div class="form-line">
-                    <label for="peso">Peso: (*)</label>
-                    <input class="form-control" type="text" id="peso" name="peso" required="required" minlength="1" maxlength="60"
-                        placeholder="2.5kg">
-                    <small>Escriba La del paciente.</small>
+  
+  <!-- Modal -->
+  <div id="mform"  class="modal fade" tabindex="-1" aria-labelledby="mformLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="mformLabel">Formulario de Registro</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form class="row w-75 mx-auto form-line" id="form">
+                <div class="m-3b contform">
+                    <div class="form-line">
+                        <label for="pname">Nombre del paciente (*)</label>
+                        <input class="form-control" type="text" id="pname" name="pname" required="required" minlength="3" maxlength="40"
+                            placeholder="Firulais">
+                        <small>Escriba el nombre del paciente</small>
+                    </div>
+                    <div class="form-line">
+                        <label for="tutor"> Nombre Completo (*) </label>
+                        <input class="form-control" type="text" id="tutor" name="tutor" required="required" minlength="3" maxlength="60"
+                            placeholder="Julio Alberto Tribiño Sotomayor">
+                        <small>Escriba los dos nombres y apellidos del tutor.</small>
+                    </div>
+                    <div class="form-line">
+                        <label for="fnac"> Edad del paciente (*) </label>
+                        <input  class="form-control" type="date" id="fnac" value="2017-06-01" name="fnac" required="required">
+                        <small>Escriba la edad.</small>
+                    </div>
+                    <div class="form-line">
+                        <label for="especie">Especie: (*)</label>
+                        <select class="form-control" name="especie" id="especie">
+                            <option value="Perro">Perro</option>
+                            <option value="Gato">Gato</option>
+                            <option value="Aves">Aves</option>
+                            <option value="Peces">Peces</option>
+                            <option value="Tortuga">Tortuga</option>
+                        </select>
+                        <small>Escriba La especie del paciente.</small>
+                    </div>
+                    <div class="form-line">
+                        <label for="raza">raza: (*)</label>
+                        <input class="form-control"type="text" id="raza" name="raza" required="required" minlength="3" maxlength="60"
+                            placeholder="golden">
+                        <small>Escriba La especie del paciente.</small>
+                    </div>
+                    <div class="form-line">
+                        <label for="sexo">Sexo: (*)</label>
+                        <select class="form-control" name="sexo" id="sexo">
+                            <option value="Macho">Macho</option>
+                            <option value="Hembra" selected>Hembra</option>
+                        </select>
+                    </div>
+                    <div class="form-line">
+                        <label for="peso">Peso: (*)</label>
+                        <input class="form-control" type="text" id="peso" name="peso" required="required" minlength="1" maxlength="60"
+                            placeholder="2.5kg">
+                        <small>Escriba La del paciente.</small>
+                    </div>
+                    <div class="form-line">
+                        <label for="diagnostico">Diagnostico: (*)</label>
+                        <textarea class="form-control" name="diagnostico" id="diagnostico" rows="1" required="required" >
+                        </textarea>
+                        <small>Escriba el diagnostico del paciente.</small>
+                    </div>
+                    <div class="form-line buttons">
+                        <button class="btn btn-primary w-75 mx-auto" id="boton" type="submit" data-bs-dismiss="modal">Enviar</button>
+                    </div>
                 </div>
-                <div class="form-line">
-                    <label for="diagnostico">Diagnostico: (*)</label>
-                    <textarea class="form-control" name="diagnostico" id="diagnostico" rows="5" required="required" cols="30">
-                    </textarea>
-                    <small>Escriba el diagnostico del paciente.</small>
-                </div><br>
-                <div class="form-line buttons">
-                    <button class="btn btn-primary" id="boton" type="submit">Enviar</button>
-                </div>
-            </div>
-        </form>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  
+<section container-fluid>
+        
 </section>
         
         
