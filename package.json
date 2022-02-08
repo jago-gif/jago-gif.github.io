@@ -2,6 +2,7 @@
   "dependencies": {
     "@supabase/supabase-js": "^1.30.0",
     "bootstrap": "^5.1.3",
+    "cloudinary-core": "^2.12.3",
     "jquery": "^3.6.0"
   },
   "name": "jago-gif.github.io",
