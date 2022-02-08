@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+*{  margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+}
+header{
+    background-color: #37cc8f;
+}
+header p{
+    margin-right: 10px;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    
+}
+
+#menu li > a {
+    font-size: 22px;
+
+}
+
+.carousel-item img{
+    max-height: 45rem; 
+    opacity: 90%; 
+}
+.carousel-item h5{
+font-size: 3rem;
+}
+.carousel-item p{
+    font-size: 1.4rem;
+}
+.servicio-fila img{
+    border-radius: 25%;
+    }
+
+
+
+/*    media pantalla pequeña  */
+@media (max-width:768px){
+    #intro{
+        width: 90% !important ; 
+    }
+    
+}
+
+
+
