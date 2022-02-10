@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,19 +9,92 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="index.css">
     <link rel="icon" href="img/icono.png">
-    <title>Veterinaria Santa Maria</title>
+    <title>Fuente de Soda </title>
 </head>
 <body>
-    
-
-
-
+     <!----------------------------------cabecera de la web--------------------------------------->
+     <header class="container-fluid d-flex justify-content-center mb-0">
+        <p>Contactanos</p>
+        <p>+569876786</p>
+        <p><i class="fas fa-mobile-alt ms-2 me-2"></i></p>
+        <p>contacto@contodosinopaqueh.cl</p>
+        <p><i class="far fa-envelope ms-2 me-2"></i></p>
+    </header>
+      <!------------------------------------------Menu------------------------------------------->
+    <nav id="menu" class="navbar bs-orange navbar-expand-lg  navbar-light " >
+        <div class="container-fluid ">
+            <img src="img/logo.gif" alt="" height="55" class="d-inline-block align-text-top">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Historia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="carta.html">Carta</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Compra Online</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contactanos</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+      <!----------------------------------Slider de imagenes--------------------------------------->
+      <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active"  data-bs-interval="3000">
+            <img src="img/hamburgers.gif" class="d-block w-100" alt="dos ricas hamburguesas">
+            <div class="carousel-caption d-none d-md-block">
+              <h5 class="text-dark">PRUEBA NUESTAS <span class="text-info">DELICIOSAS HAMBURGUESAS</span> de la casa</h5><span></span>
+              <p class="text-dark">Convinamos nuestra herencia Alemana para brindar una hamburguesa de carne 100% premium  con una vision Americana en la preparacion de los complementos</p>
+            </div>
+          </div>
+          <div class="carousel-item"  data-bs-interval="3000">
+            <img src="img/completo.gif" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5 class="text-dark">PRUEBA NUESTAS <span class="text-info">DELICIOSOS COMPLETOS </span>  DE DOS MUNDOS</h5><span></span>
+              <p class="text-dark">Convinamos nuestra herencia Alemana para brindar una Viennesas de carne 100% premium y un pan original Americano algo dulce que le da un toque con todo </p>
+            </div>
+          </div>
+          <div class="carousel-item"  data-bs-interval="3000">
+            <img src="img/hamburgers.gif" class="d-block w-100" alt="dos ricas hamburguesas">
+            <div class="carousel-caption d-none d-md-block">
+              <h5 class="text-dark">PENSAMOS EN TU TIEMPO</h5>
+              <p class="text-dark">Puedes comprar tu producto y retirarlo en nuestro local o podemos ir a dejartelo pagando un pequeño mondo de envio.</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
 
     <!-----------------------------------bootstrap---------->
-    <script> src="node_modules/bootstrap/dist/js/bootstrap.bundle.js" </script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
         <!-----------------------------------jquery---------->
-    <script> src="node_modules/jquery/dist/jquery.min.js" </script>
-</body>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    </body>
 </html>
