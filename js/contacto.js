@@ -123,6 +123,7 @@ document.getElementById("mensaje").addEventListener("blur", (evento) => {
   }
 });  
 
+
 function registrar(event){    
   // evito que el formulario haga un submit normal
   // para manejarlo dentro de la función
@@ -141,6 +142,7 @@ function registrar(event){
   const fono = document.getElementById("fono").value
   const mensaje = document.getElementById("mensaje").value
 
+  
   
 
       //envio de datos por API REST

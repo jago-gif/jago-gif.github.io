@@ -98,11 +98,25 @@
                                 </div>
                             </div>
 
-                            
-                            
                             <div class="col-md-3">
                                 <p>Motivo de contacto:</p>
-                                
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input" id="Felicitaciones"
+                                        name="radio-stacked" vale="felicitaciones" required>
+                                    <label class="form-check-label" for="elegirform">Felicitaciones</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input" id="Queja"
+                                        name="radio-stacked" vale="Queja" required>
+                                    <label class="form-check-label" for="elegirform">Queja</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" class="form-check-input" id="Consulta"
+                                        name="radio-stacked" value="Consulta" required>
+                                    <label class="form-check-label" for="elegirform">Consulta</label>
+                                    <div class="invalid-feedback">Debe seleccionar un motivo de contacto</div>
+                                </div>
+                                <p id="result"></p>
                             </div>
                             <div class="col-12">
                                 <label for="mensaje" class="form-label">Mensaje</label>
