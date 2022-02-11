@@ -1,11 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 *{  margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 body{
-    font-family: roboto;
-}
+    font-family: 'Roboto', sans-serif;}
 header{
     background-color: #ef8a6a;
 }
@@ -28,7 +27,7 @@ display: inline-block;
 }
 
 #map {
-  height: 700px;
+  height: 450px;
   /* The height is 400 pixels */
   width: 100%;
   /* The width is the width of the web page */
