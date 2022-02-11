@@ -128,7 +128,7 @@ function registrar(event){
   // para manejarlo dentro de la función
   event.preventDefault();
   alert("su formulario fue enviado");
-  location.reload();
+  
 
 
   const boton = document.getElementById("boton").disabled = true;
@@ -171,6 +171,8 @@ function registrar(event){
 
 document.getElementById("formulario-contacto")
   .addEventListener("submit", registrar);
+  
+
 
 
  
