@@ -143,7 +143,7 @@ function registrar(event) {
   const apiKey =
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl6bm14Y2NqaHBmcXJxcnR0ZHFmIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTY0NDU5NjkyOSwiZXhwIjoxOTYwMTcyOTI5fQ.uGw73zmCWanln_lWnXiQI18o3H_ErFAe3xChid3JNno";
   const url = baseURL + apiCall;
-  const paciente = {
+  const contacto = {
     nombre,
     apellido,
     email,
@@ -158,7 +158,7 @@ function registrar(event) {
       apikey: apiKey,
       authorization: "Bearer " + apiKey,
     },
-    body: JSON.stringify(paciente),
+    body: JSON.stringify(contacto),
   });
 }
 

@@ -376,4 +376,4 @@ fetch(urlPostres, {
     function(){
       alertify.error('Cancelacion de borrado');
     });
-  })  
+  });  
