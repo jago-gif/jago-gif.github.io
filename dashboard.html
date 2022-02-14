@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <!-----------------------------------bootstrap---------->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- CSS alertify -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
+    <!-- CSS alertify tema para boostrap-->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css" />
+    <script src="https://kit.fontawesome.com/e007cf61a1.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="img/icono.png">
+    <title>Fuente de Soda </title>
+
+</head>
+
+<body>
+
+    <!------------------------------------------Menu------------------------------------------->
+    <nav id="menu" class="navbar bs-orange navbar-expand-lg  navbar-light ">
+        <div class="container-fluid ">
+            <img src="img/logo.gif" alt="" height="55" class="d-inline-block align-text-top">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" aria-current="page" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="login.html">Historia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="carta.html">Carta</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Compra Online</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  text-primary" href="contacto.html">Contactanos</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="text-inicial text-primary">
+        <h1>Zona de administracion</h1>
+    </div>
+    <section>
+        <div class="user row flex">
+            <div class=" col userimg ">
+                <img src="img/user.png" alt="imagen de usuario">
+            </div>
+            <div class=" col usertxt ">
+                <p>para crear un nuevo usuario administrador precione sobre nuevo usuaro</p>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Usuario nuevo
+                </button>
+            </div>
+
+        </div>
+        <div class="col pt-4">
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Registrar Usuario</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form id='sign-up'>
+                                <h3 class="text-primary">Crear cuenta de Usuario</h3>
+                                <p>Escriba el correo electronico y la clave del trabajador que desea registrar,
+                                    posterior al
+                                    registro le llegará un correo electronico al usuario para confirmar la cuenta.
+                                </p>
+                                <label>Correo Electronico</label><input class="form-control" type='email'
+                                    name='email' />
+                                <label>Contraseña</label><input class="form-control" type='password' name='password' />
+                                <input class="btn btn-success mt-3 mx-auto" type='submit'>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="container">
+                <div class="container">
+                    <div class="row align-items-start">
+                        <div class="col">
+                            <h3>Menú Sandwiches y Completos</h3>
+                        </div>
+                        <div class="col-3">
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#modalSyC">
+                                Agregar <i class="fa-solid fa-circle-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <table class="table table-striped|sm|bordered|hover|inverse table-inverse table-responsive">
+                        <thead class="thead-inverse|thead-default">
+                            <tr>
+                                <th class="w-25">Nombre</th>
+                                <th class="w-50">Contiene</th>
+                                <th class="w-25">precio</th>
+
+
+
+                            </tr>
+                        </thead>
+                        <tbody id="Msyc">
+
+                        </tbody>
+                    </table>
+
+                </div>
+                <div class="container">
+                    <div class="row align-items-start">
+                        <div class="col">
+                            <h3>Menú Empanadas</h3>
+                        </div>
+                        <div class="col-3">
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#modalEmpa">
+                                Agregar <i class="fa-solid fa-circle-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <table class="table table-striped|sm|bordered|hover|inverse table-inverse table-responsive">
+                        <thead class="thead-inverse|thead-default">
+                            <tr>
+                                <th class="w-25">Nombre</th>
+                                <th class="w-50">Contiene</th>
+                                <th class="w-25">precio</th>
+                            </tr>
+                        </thead>
+                        <tbody id="Empa">
+
+                        </tbody>
+                    </table>
+
+                </div>
+                <div class="container">
+                    <div class="row ">
+                        <div class="col">
+                            <h3>Menú Platos</h3>
+                        </div>
+                        <div class="col-3 ">
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#modalPlatos">
+                                Agregar <i class="fa-solid fa-circle-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <table class="table table-striped|sm|bordered|hover|inverse table-inverse table-responsive">
+                        <thead class="thead-inverse|thead-default">
+                            <tr>
+                                <th class="w-25">Nombre</th>
+                                <th class="w-50">Contiene</th>
+                                <th class="w-25">precio</th>
+                            </tr>
+                        </thead>
+                        <tbody id="Platos">
+
+                        </tbody>
+                    </table>
+
+                </div>
+                <div class="container">
+                    <div class="row ">
+                        <div class="col">
+                            <h3>Menú Bebestibles</h3>
+                        </div>
+                        <div class="col-3 ">
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#modalBbstbs">
+                                Agregar <i class="fa-solid fa-circle-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <table class="table table-striped|sm|bordered|hover|inverse table-inverse table-responsive">
+                        <thead class="thead-inverse|thead-default">
+                            <tr>
+                                <th class="w-25">Nombre</th>
+                                <th class="w-50">Contiene</th>
+                                <th class="w-25">precio</th>
+                            </tr>
+                        </thead>
+                        <tbody id="Bbstbs">
+
+                        </tbody>
+                    </table>
+
+                </div>
+                <div class="container">
+                    <div class="row ">
+                        <div class="col">
+                            <h3>Menú Postres</h3>
+                        </div>
+                        <div class="col-3 ">
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#modalPostres">
+                                Agregar <i class="fa-solid fa-circle-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <table class="table table-striped|sm|bordered|hover|inverse table-inverse table-responsive">
+                        <thead class="thead-inverse|thead-default">
+                            <tr>
+                                <th class="w-25">Nombre</th>
+                                <th class="w-50">Contiene</th>
+                                <th class="w-25">precio</th>
+                            </tr>
+                        </thead>
+                        <tbody id="Postres">
+
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+    </section>
+
+
+    <!-- Modal SYC -->
+    <div class="modal fade" id="modalSyC" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Agregar producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id='form-SyC'>
+                        <h3 class="text-primary"> Sandwiches y Completos</h3>
+                        <label>Nombre</label><input class="form-control" type='text' name='Nombre' />
+                        <label>Contenido</label><input class="form-control" type='text' name='contenido' />
+                        <label>precio</label><input class="form-control" type='text' name='precio' />
+                        <input class="btn btn-success mt-3 mx-auto" type='submit'>
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal empanadas -->
+    <div class="modal fade" id="modalEmpa" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Agregar producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id='form-Empa'>
+                        <h3 class="text-primary">Agregar Empanada</h3>
+                        <label>Nombre</label><input class="form-control" type='text' name='Nombre' />
+                        <label>Contenido</label><input class="form-control" type='text' name='contenido' />
+                        <label>precio</label><input class="form-control" type='text' name='precio' />
+                        <input class="btn btn-success mt-3 mx-auto" type='submit'>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-Cerrar" data-bs-dismiss="modal">cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal platos -->
+    <div class="modal fade" id="modalPlatos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Agregar producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-body">
+                        <form id='form-Platos'>
+                            <h3 class="text-primary">Agregar Plato</h3>
+                            <label>Nombre</label><input class="form-control" type='text' name='Nombre' />
+                            <label>Contenido</label><input class="form-control" type='text' name='contenido' />
+                            <label>precio</label><input class="form-control" type='text' name='precio' />
+                            <input class="btn btn-success mt-3 mx-auto" type='submit'>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal bebestibles -->
+        <div class="modal fade" id="modalbstbs" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Agregar producto</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id='form-bstbs'>
+                            <h3 class="text-primary">Agregar Bebida</h3>
+                            <label>Nombre</label><input class="form-control" type='text' name='Nombre' />
+                            <label>Contenido</label><input class="form-control" type='text' name='contenido' />
+                            <label>precio</label><input class="form-control" type='text' name='precio' />
+                            <input class="btn btn-success mt-3 mx-auto" type='submit'>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal postres -->
+        <div class="modal fade" id="modalPostres" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Agregar producto</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id='form-Postres'>
+                            <h3 class="text-primary">Agregar Postres</h3>
+                            <label>Nombre</label><input class="form-control" type='text' name='Nombre' />
+                            <label>Contenido</label><input class="form-control" type='text' name='contenido' />
+                            <label>precio</label><input class="form-control" type='text' name='precio' />
+                            <input class="btn btn-success mt-3 mx-auto" type='submit'>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-----------------------------------bootstrap---------->
+        <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <!-----------------------------------jquery---------->
+        <script src="node_modules/jquery/dist/jquery.min.js"></script>
+        <!-----------------------------------supabase---------->
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
+        <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+
+        <script src="js/dashboard.js"></script>
+</body>
+
+</html>
