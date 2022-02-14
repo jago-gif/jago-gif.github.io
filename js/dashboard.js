@@ -21,7 +21,7 @@ const urlBbstbs = baseURL + apiCallBbstbs;
 const urlPostres = baseURL + apiCallPostres;
 
 
-
+//crear cuenta de usuarios
 
 document.addEventListener("DOMContentLoaded", function (event) {
   let signUpForm = document.querySelector("#sign-up");
@@ -252,7 +252,10 @@ fetch(urlPostres, {
     console.dir(error);
     return error;
   });
-  
+
+
+
+  //seleccionar envento dentro del tg
   const on = (element, event, selector, handler ) =>{
     element.addEventListener(event, e => {
       if(e.target.closest(selector)){
@@ -260,6 +263,8 @@ fetch(urlPostres, {
       }
     })
   }
+  //btn eliminar en sandwich y completos
+  //const syc = url+ubicacion+seleccion x nombre para eliminar 
   const syc = "https://yznmxccjhpfqrqrttdqf.supabase.co/rest/v1/menusyc?Nombre=eq.";
   on(document, 'click', ".btnbSyC", e =>{
     const fila = e.target.parentNode.parentNode
@@ -281,6 +286,8 @@ fetch(urlPostres, {
     });
   
   })
+  //btn eliminar en Empanadas
+  //const Empa = url+ubicacion+seleccion x nombre para eliminar
   const Empa = "https://yznmxccjhpfqrqrttdqf.supabase.co/rest/v1/menuEmpa?Nombre=eq.";
   on(document, 'click', ".btnbEmpa", e =>{
     const fila = e.target.parentNode.parentNode
@@ -301,6 +308,8 @@ fetch(urlPostres, {
       alertify.error('Cancel');
     });
   })
+  //btn eliminar en Platos
+  //const Platos = url+ubicacion+seleccion x nombre para eliminar
   const Platos = "https://yznmxccjhpfqrqrttdqf.supabase.co/rest/v1/Platos?Nombre=eq.";
   on(document, 'click', ".btnbPlatos", e =>{
     const fila = e.target.parentNode.parentNode
@@ -321,6 +330,8 @@ fetch(urlPostres, {
       alertify.error('Cancel');
     });
   })
+    //btn eliminar en Bebestibles
+  //const Bbstbs = url+ubicacion+seleccion x nombre para eliminar
   const Bbstbs = "https://yznmxccjhpfqrqrttdqf.supabase.co/rest/v1/Bebestibles?Nombre=eq.";
   on(document, 'click', ".btnbBbstbs", e =>{
     const fila = e.target.parentNode.parentNode
@@ -344,6 +355,8 @@ fetch(urlPostres, {
     });      fila.d-none
 
   })  
+    //btn eliminar en Postres
+  //const Postres = url+ubicacion+seleccion x nombre para eliminar
   const Postres = "https://yznmxccjhpfqrqrttdqf.supabase.co/rest/v1/Postres?Nombre=eq.";
   on(document, 'click', ".btnbPostres", e =>{
     const fila = e.target.parentNode.parentNode
