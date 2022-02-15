@@ -46,7 +46,7 @@ window.addEventListener("DOMContentLoaded", (eventoLoaded) => {
 });
 
 function redirigirAPaginaPrincipal() {
-  window.location = "dashboard.html";
+  window.location = "/privado/dashboard.html";
 }
 
 function mostrarMensajesError() {
