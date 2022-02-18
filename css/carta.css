@@ -5,10 +5,10 @@
 }
 body{
     font-family: 'Roboto', sans-serif;}
-header{
+#head{
     background-color: #ef8a6a;
 }
-header p{
+#head p{
     margin: 0px;
 }
 .titulo{
